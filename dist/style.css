@@ -1,0 +1,77 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+a, a:visited, a:active {
+  text-decoration: none;
+}
+
+:root {
+  --background-color: hsl(0, 0%, 13%);
+  --text-color: hsl(0, 0%, 100%);
+}
+
+/* Keep one index folder in each sass sub-folder
+to help with organisation */
+/*forward imports the styles from the other globals
+sass files */
+/* Using BEM (Block Element Modifier), class naming can be standardised and 
+more maintainable 
+
+ Block is a standalone component in the design, in this case::after
+
+-   .grid === Block
+-   &__main === Child Element
+-   &__sidebar === Child Element
+
+Modifier is alternative versions of the blocks or element,
+denoted with double underscore __
+
+BEM helps with organisation
+BEM helps reduce chance of style conflicts
+
+*/
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+  gap: 40px;
+}
+@media (min-width: 900px) {
+  .grid {
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+  }
+}
+.grid__main, .grid__sidebar {
+  padding: 40px;
+}
+.grid__main {
+  background-color: hsl(240deg, 76%, 49%);
+}
+.grid__sidebar {
+  background-color: hsl(272deg, 71%, 70%);
+}/*# sourceMappingURL=style.css.map */

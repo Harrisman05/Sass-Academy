@@ -1,0 +1,45 @@
+/* Using BEM (Block Element Modifier), class naming can be standardised and 
+more maintainable 
+
+ Block is a standalone component in the design, in this case::after
+
+-   .grid === Block
+-   &__main === Child Element
+-   &__sidebar === Child Element
+
+Modifier is alternative versions of the blocks or element,
+denoted with double underscore __
+
+BEM helps with organisation
+BEM helps reduce chance of style conflicts
+
+*/
+
+// Sass Nesting 
+
+.grid {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 40px;
+
+    @media (min-width: 900px) {
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto;
+
+    }
+
+    &__main, &__sidebar {
+        padding: 40px;
+    }
+    
+    &__main {    // Ampersand used in place of parent name
+        background-color: hsl(240, 76%, 49%);
+    }
+
+    &__sidebar {
+        background-color: hsl(272, 71%, 70%);
+    }
+
+}

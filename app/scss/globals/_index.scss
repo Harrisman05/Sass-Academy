@@ -1,0 +1,12 @@
+/* Keep one index folder in each sass sub-folder
+to help with organisation */
+
+@forward "boilerplate";
+@forward "typography";
+@forward "colors";
+
+
+// _ is not needed, nor the file extension is needed
+
+/*forward imports the styles from the other globals
+sass files */
