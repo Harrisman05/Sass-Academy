@@ -17,17 +17,20 @@ BEM helps reduce chance of style conflicts
 
 // Sass Nesting 
 
+@use '../util' as util;
+
 .grid {
 
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto auto;
     gap: 40px;
+    max-width: 1000px;
+    margin-inline: auto; // sets left and right margin only
 
-    @media (min-width: 900px) {
+    @include util.breakpoint(large) {
         grid-template-columns: 2fr 1fr;
         grid-template-rows: auto;
-
     }
 
     &__main, &__sidebar {

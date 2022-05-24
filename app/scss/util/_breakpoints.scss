@@ -1,0 +1,16 @@
+/* mobile - < 700px
+   desktop - 700 - 900px
+   screen - > 900px  
+*/
+
+$breakpoints-up: (
+    "medium": 43.75em, // 700px converted to em, best to use more media query
+    "large": 56.25em, // 900 / 16
+    "xlarge": 90em, // 1440 / 16 
+);
+
+@mixin breakpoint($size) { // get values from sass map above
+    @media (min-width: map-get($breakpoints-up, $size)) {
+        @content;
+    }
+}
